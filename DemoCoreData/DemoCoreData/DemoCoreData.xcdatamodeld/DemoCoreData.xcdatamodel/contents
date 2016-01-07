@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="City" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="province" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="School" syncable="YES"/>
+    </entity>
+    <entity name="Notification" representedClassName="Notification" syncable="YES">
+        <attribute name="attribute" optional="YES" syncable="YES"/>
+        <attribute name="attribute1" optional="YES" syncable="YES"/>
+        <attribute name="attribute2" optional="YES" syncable="YES"/>
+        <attribute name="attribute3" optional="YES" syncable="YES"/>
+        <attribute name="attribute4" optional="YES" syncable="YES"/>
+        <attribute name="attribute5" optional="YES" syncable="YES"/>
+        <attribute name="attribute6" optional="YES" syncable="YES"/>
+        <attribute name="attribute7" optional="YES" syncable="YES"/>
+        <attribute name="fireDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="messageBody" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" syncable="YES"/>
+        <relationship name="reminder" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Reminder" inverseName="notifications" inverseEntity="Reminder" syncable="YES"/>
+    </entity>
+    <entity name="Reminder" representedClassName="Reminder" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="notifications" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Notification" inverseName="reminder" inverseEntity="Notification" syncable="YES"/>
+    </entity>
+    <entity name="School" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Notification" positionX="-63" positionY="219" width="128" height="238"/>
+        <element name="Reminder" positionX="-270" positionY="102" width="128" height="103"/>
+        <element name="School" positionX="-162" positionY="198" width="128" height="73"/>
+        <element name="City" positionX="-153" positionY="261" width="128" height="90"/>
+    </elements>
+</model>
